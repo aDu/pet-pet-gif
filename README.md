@@ -26,7 +26,7 @@ const petPetGif = require('pet-pet-gif')
 
 ...
 
-async (param) => {
+const petCommandExample = async (param) => {
     let animatedGif = await petPetGif(param.member.avatarURL)
     bot.createMessage(param.channel.id,
         {
