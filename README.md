@@ -18,16 +18,17 @@ Further meme info: https://knowyourmeme.com/memes/pet-the-x-petthe-emotes
 
 `npm i -S pet-pet-gif`
 
-Example usage for a Discord bot (using [Eris](https://www.npmjs.com/package/eris) in the example but should be similar for other Discord API wrappers).
+Two examples in one (using [Eris](https://www.npmjs.com/package/eris) in the example but should be similar for other Discord Bot API wrappers).
 
 ```
-
 const petPetGif = require('pet-pet-gif')
 
 ...
 
 const petCommandExample = async (param) => {
     let animatedGif = await petPetGif(param.member.avatarURL)
+
+    // Example #1: Reply with the image attached
     bot.createMessage(param.channel.id,
         {
           "embed": {
@@ -40,5 +41,10 @@ const petCommandExample = async (param) => {
             file: animatedGif,
             name: 'pet.gif'
         })
+
+    // Example #2: Or you could save it somewhere.
+    fs.writeFile('idi_nahui.gif', animatedGif, function (err) {
+        console.log('Cyka blyat! An error occurred!')
+    })
 }
 ```
