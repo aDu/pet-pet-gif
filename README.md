@@ -13,9 +13,11 @@ Further meme info: https://knowyourmeme.com/memes/pet-the-x-petthe-emotes
 
 ## Usage
 
+https://www.npmjs.com/package/pet-pet-gif
+
 `npm i -S pet-pet-gif`
 
-Example usage for a Discord bot (using Eris in the example but should be similar for other Discord API wrappers).
+Example usage for a Discord bot (using [Eris](https://www.npmjs.com/package/eris) in the example but should be similar for other Discord API wrappers).
 
 ```
 
