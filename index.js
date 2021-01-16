@@ -3,11 +3,11 @@ const path = require('path')
 const GIFEncoder = require('gifencoder')
 const Canvas = require('canvas')
 
-let FRAMES = 10
-let RESOLUTION = 128
-let DELAY = 20
+const FRAMES = 10
+const RESOLUTION = 128
+const DELAY = 20
 
-let petGifCache = []
+const petGifCache = []
 
 module.exports = async (avatarURL) => {
     const encoder = new GIFEncoder(RESOLUTION, RESOLUTION)
@@ -24,12 +24,12 @@ module.exports = async (avatarURL) => {
     for (let i = 0; i < FRAMES; i++) {
         ctx.clearRect(0, 0, canvas.width, canvas.height)
 
-        let j = i < FRAMES / 2 ? i : FRAMES - i
+        const j = i < FRAMES / 2 ? i : FRAMES - i
 
-        let width = 0.8 + j * 0.02
-        let height = 0.8 - j * 0.05
-        let offsetX = (1 - width) * 0.5 + 0.1
-        let offsetY = (1 - height) - 0.08
+        const width = 0.8 + j * 0.02
+        const height = 0.8 - j * 0.05
+        const offsetX = (1 - width) * 0.5 + 0.1
+        const offsetY = (1 - height) - 0.08
 
         if (i == petGifCache.length) petGifCache.push(await Canvas.loadImage(path.resolve(__dirname, `img/pet${i}.gif`)))
 
