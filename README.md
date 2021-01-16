@@ -5,11 +5,11 @@ The avatar will bounce up and down to simulate the petting.
 
 Inspired by benisland (https://benisland.neocities.org/petpet/).
 
-Meme origin: https://knowyourmeme.com/memes/pet-the-x-petthe-emotes
+Further meme info: https://knowyourmeme.com/memes/pet-the-x-petthe-emotes
 
 ## Demo
 
-![Input](/example/input.png) -> ![Output](/example/output.gif)
+![Input](/example/input.png) → ![Output](/example/output.gif)
 
 ## Usage
 
@@ -26,7 +26,7 @@ const petPetGif = require('pet-pet-gif')
 async (param) => {
 	let animatedGif = await petPetGif(param.member.avatarURL)
 	bot.createMessage(param.channel.id,
-		{
+        {
           "embed": {
             "image": {
               "url": 'attachment://pet.gif',
