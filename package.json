@@ -1,6 +1,6 @@
 {
   "name": "pet-pet-gif",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "Given an avatar, generate a petting gif (known as \"petpet\" or \"pet the\").",
   "main": "index.js",
   "scripts": {
