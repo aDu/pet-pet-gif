@@ -51,6 +51,6 @@ const petCommandExample = async (param) => {
 
 ## Feature requests
 
-Feel free to submit feature requests on https://github.com/aDu/pet-pet-gif/issues/new - I'd probably be happy to implement them!
+Feel free to submit feature requests by [clicking here](https://github.com/aDu/pet-pet-gif/issues/new?assignees=aDu&labels=&template=feature_request.md&title=i+has+big+idea+for+u%2C+pls+implement) - I'd probably be happy to implement them!
 
 Or make a pull request :).
