@@ -48,3 +48,9 @@ const petCommandExample = async (param) => {
     })
 }
 ```
+
+## Feature requests
+
+Feel free to submit feature requests on https://github.com/aDu/pet-pet-gif/issues/new - I'd probably be happy to implement them!
+
+Or make a pull request :).
