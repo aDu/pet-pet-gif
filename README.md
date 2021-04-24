@@ -51,6 +51,18 @@ const petCommandExample = async (param) => {
 }
 ```
 
+## Options
+You can optionally specify the `options` argument (each field in the `options` field is optional).
+
+```
+let animatedGif = await petPetGif(param.member.avatarURL, {
+        resolution: 128, // The width (or height) of the generated gif
+        delay: 20, // Delay between each frame (i.e. 1 / delay is the FPS). Defaults to 20.
+        backgroundColor: "red", // Other values could be "rgba(0,0,0,0.5)". Defaults to null - i.e. transparent
+    })
+```
+
+
 ## Feature requests
 
 Feel free to submit feature requests by [clicking here](https://github.com/aDu/pet-pet-gif/issues/new?assignees=aDu&labels=&template=feature_request.md&title=i+has+big+idea+for+u%2C+pls+implement) - I'd probably be happy to implement them!

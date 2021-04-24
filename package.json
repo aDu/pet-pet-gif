@@ -1,6 +1,6 @@
 {
   "name": "pet-pet-gif",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "description": "Given an avatar, generate a petting gif (known as \"petpet\" or \"pet the\").",
   "main": "index.js",
   "scripts": {
@@ -24,6 +24,7 @@
   },
   "homepage": "https://github.com/aDu/pet-pet-gif#readme",
   "dependencies": {
-    "gifencoder": "^2.0.1"
+    "gifencoder": "^2.0.1",
+    "lodash": "^4.17.21"
   }
 }

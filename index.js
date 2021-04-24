@@ -1,28 +1,44 @@
 const path = require('path')
+const _ = require('lodash')
 
 const GIFEncoder = require('gifencoder')
 const Canvas = require('canvas')
 
 const FRAMES = 10
-const RESOLUTION = 128
-const DELAY = 20
 
 const petGifCache = []
 
-module.exports = async (avatarURL) => {
-    const encoder = new GIFEncoder(RESOLUTION, RESOLUTION)
+const defaultOptions = {
+    resolution: 128,
+    delay: 20,
+    backgroundColor: null,
+}
+
+module.exports = async (avatarURL, options = {}) => {
+    options = _.defaults(options, defaultOptions) // Fill in the default option values
+
+    // Create GIF encoder
+    const encoder = new GIFEncoder(options.resolution, options.resolution)
 
     encoder.start()
     encoder.setRepeat(0)
-    encoder.setDelay(DELAY)
+    encoder.setDelay(options.delay)
+    encoder.setTransparent()
 
-    const canvas = Canvas.createCanvas(RESOLUTION, RESOLUTION)
+    // Create canvas and its context
+    const canvas = Canvas.createCanvas(options.resolution, options.resolution)
     const ctx = canvas.getContext('2d')
 
     const avatar = await Canvas.loadImage(avatarURL)
 
+    // Loop and create each frame
     for (let i = 0; i < FRAMES; i++) {
         ctx.clearRect(0, 0, canvas.width, canvas.height)
+
+        if (options.backgroundColor) {
+            ctx.fillStyle = options.backgroundColor
+            ctx.fillRect(0, 0, canvas.width, canvas.height)
+        }
 
         const j = i < FRAMES / 2 ? i : FRAMES - i
 
@@ -33,8 +49,9 @@ module.exports = async (avatarURL) => {
 
         if (i == petGifCache.length) petGifCache.push(await Canvas.loadImage(path.resolve(__dirname, `img/pet${i}.gif`)))
 
-        ctx.drawImage(avatar, RESOLUTION * offsetX, RESOLUTION * offsetY, RESOLUTION * width, RESOLUTION * height)
-        ctx.drawImage(petGifCache[i], 0, 0, RESOLUTION, RESOLUTION)
+        ctx.drawImage(avatar, options.resolution * offsetX, options.resolution * offsetY, options.resolution * width, options.resolution * height)
+        ctx.drawImage(petGifCache[i], 0, 0, options.resolution, options.resolution)
+
         encoder.addFrame(ctx)
     }
 
