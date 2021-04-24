@@ -56,10 +56,10 @@ You can optionally specify the `options` argument (each field in the `options` f
 
 ```
 let animatedGif = await petPetGif(param.member.avatarURL, {
-        resolution: 128, // The width (or height) of the generated gif
-        delay: 20, // Delay between each frame (i.e. 1 / delay is the FPS). Defaults to 20.
-        backgroundColor: "red", // Other values could be "rgba(0,0,0,0.5)". Defaults to null - i.e. transparent
-    })
+    resolution: 128, // The width (or height) of the generated gif
+    delay: 20, // Delay between each frame (i.e. 1 / delay is the FPS). Defaults to 20.
+    backgroundColor: "red", // Other values could be the string "rgba(123, 233, 0, 0.5)". Defaults to null - i.e. transparent.
+})
 ```
 
 
