@@ -14,7 +14,7 @@ Further meme info: https://knowyourmeme.com/memes/pet-the-x-petthe-emotes
 
 ![Input](/example/input.png) → ![Output](/example/output.gif)
 
-You can also try it out on https://hellist.ru/discord (with the `;pet` command).
+You can also try it out on https://hellist.com/discord (with the `;pet` command).
 
 ## Usage
 
